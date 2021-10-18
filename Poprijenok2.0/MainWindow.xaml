@@ -1,0 +1,30 @@
+﻿<Window x:Class="Poprijenok2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Poprijenok2._0"
+        mc:Ignorable="d"
+        Title="Попрыженок" Height="450" Width="800" 
+        Icon="Resources/Poprig.ico"
+        MinHeight="450" MinWidth="600"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="0"/>
+        <Rectangle Grid.Row="2"/>
+        
+        <Label Grid.Row="0" Content="Попрыженок" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+        <Image Source="Resources/Poprig.png" HorizontalAlignment="Left"/>
+        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
+        <Button Name="btnExit" Content="Выход" Click="btnExit_Click" Grid.Row="2" HorizontalAlignment="Right"/>
+        
+        <Button Name="btnBack" Content="Назад" Click="btnBack_Click" Grid.Row="0" HorizontalAlignment="Right"/>
+
+    </Grid>
+</Window>
