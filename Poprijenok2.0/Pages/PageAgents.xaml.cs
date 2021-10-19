@@ -40,6 +40,8 @@ namespace Poprijenok2._0.Pages
 
             lvAgents.ItemsSource = currentAgents;
             cbTypes.ItemsSource = types;
+            cbTypes.DisplayMemberPath = "Title";
+            cbTypes.SelectedValuePath = "ID";
             cbTypes.SelectedIndex = 0;
             cbSort.ItemsSource = sort;
         }
@@ -48,10 +50,10 @@ namespace Poprijenok2._0.Pages
         {
             var currentAgents = Poprijenok2Entities.GetContext().Agent.ToList();
 
-            //if (cbTypes.SelectedIndex > 0)
-            //{
-            //    currentAgents = currentAgents.Where(p => p.AgentType.Contains(cbTypes.SelectedItem as AgentType)).ToList();
-            //}
+            if (cbTypes.SelectedIndex > 0)
+            {
+                currentAgents = currentAgents.Where(p => p.AgentTypeID == int.Parse(cbTypes.SelectedValue.ToString())).ToList();
+            }
 
             currentAgents = currentAgents.Where(p => p.Title.ToLower().Contains(tbFinder.Text.ToLower())).ToList();
             lvAgents.ItemsSource = currentAgents.ToList();
@@ -88,7 +90,7 @@ namespace Poprijenok2._0.Pages
 
         private void cbTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            UpdateAgents();
         }
     }
 }
