@@ -130,6 +130,7 @@
     <Compile Include="Model\Supplier.cs">
       <DependentUpon>ModelAgents.tt</DependentUpon>
     </Compile>
+    <Compile Include="SalesCounter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -328,6 +329,7 @@
     <Resource Include="agents\agent_97.png" />
     <Resource Include="agents\agent_98.png" />
     <Resource Include="agents\agent_99.png" />
+    <Resource Include="agents\picture.png" />
     <Content Include="Model\ModelAgents.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelAgents.Context.cs</LastGenOutput>

@@ -11,43 +11,49 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1.4*"/>
             <RowDefinition Height="8*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="0.7*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Label Content="Агенты" Grid.Row="0" HorizontalAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="4" />
+        <TextBox Name="tbFinder" Grid.Row="1" Grid.Column="0" TextChanged="tbFinder_TextChanged" Margin="5, 2, 5, 2" GotFocus="tbFinder_GotFocus"/>
+        <ComboBox Name="cbSort" Grid.Row="1" Grid.Column="1" SelectionChanged="cbSort_SelectionChanged" Margin="5, 2, 5, 2"/>
+        <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <RadioButton Name="rbAsc" Content="По возрастанию" IsChecked="True" Click="radioButton_Click"/>
+            <RadioButton x:Name="rbDesc" Content="По убыванию" Click="radioButton_Click"/>
+        </StackPanel>
+        <ComboBox Name="cbTypes" Grid.Row="1" Grid.Column="3" SelectionChanged="cbTypes_SelectionChanged" Margin="5, 2, 5, 2"/>
 
-        <TextBox Name="tbFinder" Grid.Row="0" Grid.Column="0" TextChanged="tbFinder_TextChanged" Margin="5, 1, 5, 1"/>
-        <ComboBox Name="cbSort" Grid.Row="0" Grid.Column="1" SelectionChanged="cbSort_SelectionChanged" Margin="5, 1, 5, 1"/>
-        <ComboBox Name="cbTypes" Grid.Row="0" Grid.Column="2" SelectionChanged="cbTypes_SelectionChanged" Margin="5, 1, 5, 1"/>
-
-        <ListView Grid.Row="1" Name="lvAgents" Grid.ColumnSpan="3" Margin="2">
+        <ListView Grid.Row="2" Name="lvAgents" Grid.ColumnSpan="4" Margin="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Image Source="{Binding LogoAgent}" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <Image Source="{Binding LogoAgent}" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
                         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding AgentType}"/>
                                 <TextBlock Text=" | "/>
                                 <TextBlock Text="{Binding Title}"/>
                             </StackPanel>
-                            <TextBlock Text="{Binding QQQQQ, StringFormat={}{0} продаж за год}"/>
+                            <TextBlock Text="{Binding SalesCount, StringFormat={}{0} продаж за год}"/>
                                 <TextBlock Text="{Binding Phone}"/>
                             <TextBlock Text="{Binding Priority, StringFormat={}Приоритетность: {0}}"/>
                             </StackPanel>
-                        <Button Name="btnEdit" Content="Редактиовать" Click="btnEdit_Click" Grid.Column="2"/>
+                        <Button Name="btnEdit" Content="Редактировать" Click="btnEdit_Click" Grid.Column="2"/>
                         <StackPanel Orientation="Horizontal" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBlock Text="00" Grid.Column="3"/>
                             <TextBlock Text="%" Grid.Column="3"/>
@@ -57,6 +63,6 @@
             </ListView.ItemTemplate>
         </ListView>
         
-        <Button Name="btnAdd" Content="Добавить" Grid.Row="2" Grid.Column="1" Click="btnAdd_Click"/>
+        <Button Name="btnAdd" Content="Добавить" Grid.Row="3" Grid.ColumnSpan="4" Click="btnAdd_Click"/>
     </Grid>
 </Page>

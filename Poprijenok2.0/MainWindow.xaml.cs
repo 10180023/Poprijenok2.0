@@ -28,17 +28,20 @@ namespace Poprijenok2._0
             btnBack.Visibility = Visibility.Hidden;
             MainFrame.Navigate(new PageWelcome());
         }
-
+        /// <summary>
+        /// Выход из приложения
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
-        private void btnAgents_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MainFrame.Navigate(new PageAgents());
-        }
-
+        /// <summary>
+        /// Изменение видимости кнопки Назад
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
             if (MainFrame.CanGoBack)
@@ -50,7 +53,11 @@ namespace Poprijenok2._0
                 btnBack.Visibility = Visibility.Hidden;
             }
         }
-
+        /// <summary>
+        /// Возврат к предыдущей странице
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.GoBack();

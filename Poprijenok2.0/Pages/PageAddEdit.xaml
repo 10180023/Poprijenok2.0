@@ -16,38 +16,55 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Название" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="Тип" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="Адрес" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="ИНН" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="КПП" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="Директор" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="Телефон" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="Email" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="Логотип" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="Приоритет" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBox Name="tbTitle" Text="{Binding Title}" Grid.Row="0" Grid.Column="1"/>
-        <ComboBox Name="cbAgentType" SelectedItem="{Binding AgentType}" Grid.Row="1" Grid.Column="1"/>
-        <TextBox Name="tbAddr" Text="{Binding Address}" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap"/>
-        <TextBox Name="tbINN" Text="{Binding INN}" Grid.Row="3" Grid.Column="1"/>
-        <TextBox Name="tbKPP" Text="{Binding KPP}" Grid.Row="4" Grid.Column="1"/>
-        <TextBox Name="tbDirector" Text="{Binding DirectorName}" Grid.Row="0" Grid.Column="3"/>
-        <TextBox Name="tbPhone" Text="{Binding Phone}" Grid.Row="1" Grid.Column="3"/>
-        <TextBox Name="tbEmail" Text="{Binding Email}" Grid.Row="2" Grid.Column="3"/>
-        <TextBox Name="tbLogo" Text="{Binding Logo}" Grid.Row="3" Grid.Column="3"/>
-        <TextBox Name="tbPriority" Text="{Binding Priority}" Grid.Row="4" Grid.Column="3"/>
+        <Label Content="Редактор" Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <Button Name="btnSave" Content="Сохранить" Grid.Row="5" Grid.ColumnSpan="4" HorizontalAlignment="Left" Click="btnSave_Click"/>
-        <Button Name="btnCancel" Content="Отмена" Grid.Row="5" Grid.ColumnSpan="4" HorizontalAlignment="Center" Click="btnCancel_Click"/>
-        <Button Name="btnDelete" Content="Удалить" Grid.Row="5" Grid.ColumnSpan="4" HorizontalAlignment="Right" Click="btnDelete_Click"/>
+
+
+        <TextBlock Text="Название" Grid.Row="1" Grid.Column="0" Style="{StaticResource AddEditTb}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Тип" Grid.Row="2" Grid.Column="0" Style="{StaticResource AddEditTb}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Адрес" Grid.Row="3" Grid.Column="0" Style="{StaticResource AddEditTb}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="ИНН" Grid.Row="4" Grid.Column="0" Style="{StaticResource AddEditTb}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="КПП" Grid.Row="5" Grid.Column="0" Style="{StaticResource AddEditTb}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Директор" Grid.Row="1" Grid.Column="2" Style="{StaticResource AddEditTb}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Телефон" Grid.Row="2" Grid.Column="2" Style="{StaticResource AddEditTb}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Email" Grid.Row="3" Grid.Column="2" Style="{StaticResource AddEditTb}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Логотип" Grid.Row="4" Grid.Column="2" Style="{StaticResource AddEditTb}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Приоритет" Grid.Row="5" Grid.Column="2" Style="{StaticResource AddEditTb}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBox Name="tbTitle" Text="{Binding Title}" Grid.Row="1" Grid.Column="1" Style="{StaticResource Marging}"/>
+        <ComboBox Name="cbAgentType" SelectedItem="{Binding AgentType}" Grid.Row="2" Grid.Column="1" Style="{StaticResource Marging}"/>
+        <TextBox Name="tbAddr" Text="{Binding Address}" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Style="{StaticResource Marging}"/>
+        <TextBox Name="tbINN" Text="{Binding INN}" Grid.Row="4" Grid.Column="1" Style="{StaticResource Marging}" ToolTip="Для ввода доступны только цифры" PreviewTextInput="Digits_PreviewTextInput"/>
+        <TextBox Name="tbKPP" Text="{Binding KPP}" Grid.Row="5" Grid.Column="1" Style="{StaticResource Marging}" ToolTip="Для ввода доступны только цифры" PreviewTextInput="Digits_PreviewTextInput"/>
+        <TextBox Name="tbDirector" Text="{Binding DirectorName}" Grid.Row="1" Grid.Column="3" Style="{StaticResource Marging}"/>
+        <TextBox Name="tbPhone" Text="{Binding Phone}" Grid.Row="2" Grid.Column="3" Style="{StaticResource Marging}"/>
+        <TextBox Name="tbEmail" Text="{Binding Email}" Grid.Row="3" Grid.Column="3" Style="{StaticResource Marging}"/>
+        <Grid Grid.Row="4" Grid.Column="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox Name="tbLogo" Grid.Column="0" Text="{Binding Logo}"  Style="{StaticResource Marging}" IsEnabled="False"/>
+            <Button Name="btnLogo" Content="Выбор" Grid.Column="1" Click="btnLogo_Click" Width="auto" Margin="0"/>
+            <Image Name="Logo" Grid.Column="2" Source="../Resources/picture.png" Margin="2"/>
+        </Grid>
+        <TextBox Name="tbPriority" Text="{Binding Priority}" Grid.Row="5" Grid.Column="3" Style="{StaticResource Marging}" ToolTip="Для ввода доступны только цифры" PreviewTextInput="Digits_PreviewTextInput"/>
+
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="btnSave" Content="Сохранить" HorizontalAlignment="Left" Click="btnSave_Click"/>
+            <Button Name="btnCancel" Content="Отмена" HorizontalAlignment="Center" Click="btnCancel_Click" Margin="50, 0, 50, 0"/>
+            <Button Name="btnDelete" Content="Удалить" HorizontalAlignment="Right" Click="btnDelete_Click" Background="#F9969E"/>
+        </StackPanel>
     </Grid>
 </Page>

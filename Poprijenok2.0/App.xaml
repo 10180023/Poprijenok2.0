@@ -10,7 +10,6 @@
         <Style TargetType="Label">
             <Setter Property="FontFamily" Value="Comic Sans MS"/>
             <Setter Property="FontSize" Value="30"/>
-            <Setter Property="Margin" Value="5"/>
         </Style>
         <Style TargetType="Image">
             <Setter Property="Margin" Value="10"/>
@@ -25,7 +24,36 @@
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="Comic Sans MS"/>
-            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <Style TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="3, 8, 3, 8"/>
+            <Setter Property="BorderBrush" Value="#43DCFE"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="AddEditTb" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+        <Style x:Key="Marging">
+            <Setter Property="TextBox.Margin" Value="-20, 5, 15, 5"/>
+            <Setter Property="ComboBox.Margin" Value="-20, 5, 15, 5"/>
+            <Setter Property="TextBlock.FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="TextBlock.FontSize" Value="16"/>
+            <Setter Property="TextBox.VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="16"/>
         </Style>
     </Application.Resources>
 </Application>

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Poprijenok2._0"
         mc:Ignorable="d"
-        Title="Попрыженок" Height="450" Width="800" 
+        Title="Попрыженок" Height="600" Width="1100" 
         Icon="Resources/Poprig.ico"
-        MinHeight="450" MinWidth="600"
+        MinHeight="600" MinWidth="1100"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
@@ -18,13 +18,15 @@
 
         <Rectangle Grid.Row="0"/>
         <Rectangle Grid.Row="2"/>
-        
-        <Label Grid.Row="0" Content="Попрыженок" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
-        <Image Source="Resources/Poprig.png" HorizontalAlignment="Left"/>
+
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="Resources/Poprig.png"/>
+            <Label Grid.Row="0" Content="Попрыженок" VerticalContentAlignment="Center"/>
+            
+        </StackPanel>
         <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
-        <Button Name="btnExit" Content="Выход" Click="btnExit_Click" Grid.Row="2" HorizontalAlignment="Right"/>
-        
-        <Button Name="btnBack" Content="Назад" Click="btnBack_Click" Grid.Row="0" HorizontalAlignment="Right"/>
+        <Button Name="btnExit" Content="Выход" Click="btnExit_Click" Grid.Row="2" HorizontalAlignment="Right" Margin="0, 0, 25, 0"/>
+        <Button Name="btnBack" Content="Назад" Click="btnBack_Click" Grid.Row="0" HorizontalAlignment="Right" Margin="0, 0, 25, 0"/>
 
     </Grid>
 </Window>

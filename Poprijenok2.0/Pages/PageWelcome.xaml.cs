@@ -24,7 +24,11 @@ namespace Poprijenok2._0.Pages
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Открытие окна для просмотра списка агентов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgents_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new PageAgents());
